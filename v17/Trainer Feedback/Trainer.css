@@ -1,0 +1,46 @@
+
+h1{
+    text-align: center;
+    color: #FF00FF;
+    font-style: italic;
+}
+
+table{
+    margin-left: 35%;
+    background-color: #F0F0F0;
+}
+td{
+    text-align: center;
+}h2{
+    margin:0;
+    padding-bottom: 0.5px;
+}
+.caption{
+    margin-left: 35%;
+    font-weight: bold;
+}
+.tr1{
+    background-color: #ff0080;
+}
+.tr2{
+    background-color: aqua;
+    color: black;
+}
+.theader{
+    background-color: #800000;
+}
+#ex1,#vg1{
+    background-color: #00ff00;
+}
+#go1{
+    background-color: #ffff00;
+}
+#av1{
+    background-color: #d3d3d3;
+    color: #ffffff;
+}
+#bal{
+    background-color: #ff0000;
+    color: #ffffff;
+}
+
