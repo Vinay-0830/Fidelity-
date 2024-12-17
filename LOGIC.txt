@@ -10,6 +10,19 @@ If the file is present and contains valid data, the integration proceeds with it
 
 
 
+To accommodate the unique Sunday-specific logic for inbound file processing in Workday, the header of the file can be modified to include an identifier that differentiates Sunday reconciliation files from regular weekday files. The existing header format, H|<Identifier>|<Date>, can be adapted to include a unique suffix or marker for Sunday files. For instance, a weekday file could retain the standard format, such as H|INT397|JUL 2024, while Sunday files could use a modified header, such as H|INT397-SUN|JUL 2024. The inclusion of -SUN or a similar identifier explicitly distinguishes Sunday files, allowing the integration to apply specific processing rules for these cases.
+
+During file processing, the integration will parse the header row to identify the file type. If the header indicates a weekday file, the integration will enforce weekday-specific rules, such as ensuring the file contains data. If the header denotes a Sunday file, the integration will trigger Sunday-specific logic, allowing the process to complete even if the file is empty but marking it as completed with errors while logging the issue. In scenarios where the header is missing or does not follow the expected format, the process will be aborted, and CTG will be notified for further investigation.
+
+This approach simplifies the integration logic by embedding the file type directly within the header, making the file self-descriptive and reducing reliance on external factors such as system dates. It also enhances error handling by enabling clear identification of file type mismatches or issues during processing. By ensuring upstream systems consistently generate files with the correct header format, this solution provides a robust and scalable method to manage Sunday reconciliation logic alongside weekday processing.
+
+
+
+
+
+
+
+
 
 
 
