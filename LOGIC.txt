@@ -1,0 +1,15 @@
+The integration logic has been designed to handle file processing with a clear and robust approach, ensuring compliance with specific business requirements. Initially, the integration verifies whether the expected file exists. If the file is missing, the process is immediately stopped, and an error message is generated to notify CTG, ensuring no further processing occurs in the absence of a required file.
+
+Next, the integration identifies the current day of the week and determines whether it is a weekday (Tuesday to Saturday) or Sunday. This step is essential to apply the appropriate logic based on the day, as the processing rules differ between weekdays and Sundays.
+
+On weekdays, the integration expects the file to contain data. If the file is empty, the process is halted, and CTG is notified of the issue. This ensures that data is consistently available for processing during weekdays, and any discrepancies are promptly addressed.
+
+For Sunday processing, the integration follows a different approach. If the file is empty, it logs an error message but does not stop the process. Instead, it marks the process as completed with errors, aligning with the business requirement to allow Sunday reconciliation to proceed, even if no data is present in the file.
+
+If the file is present and contains valid data, the integration proceeds with its normal processing. This ensures that valid files are handled seamlessly, without interruption. The integration logic is designed to provide clear feedback and notifications, enabling the CTG team to monitor and resolve issues effectively while maintaining data integrity and adhering to the unique requirements for weekday and Sunday processing.
+
+
+
+
+
+
