@@ -18,6 +18,10 @@ This approach simplifies the integration logic by embedding the file type direct
 
 
 
+We can also have the option of changing the naming conventions of files, where weekday files follow a standard format, and Sunday files include a unique identifier to distinguish them. This approach allows the integration process to identify Sunday files during validation and apply specific logic tailored to them, while the standard logic remains applicable for weekday files. Such a method ensures clarity, enhances processing efficiency, and supports streamlined validation workflows.
+
+
+
 
 
 
